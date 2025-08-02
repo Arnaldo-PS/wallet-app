@@ -1,0 +1,23 @@
+module.exports = function (api) {
+    api.cache(true);
+    return {
+        presets: ['babel-preset-expo'],
+        plugins: [
+            "module-resoler", {
+                root: ["./src"],
+                extensions: [".js", ".jsx", ".ts", ".tsx"],
+                alias: {
+                    "@assets": "./src/assets",
+                    "@components": "./src/components",
+                    "@config": "./src/config",
+                    "@hook": "./src/hook",
+                    "@routes": "./src/routes",
+                    "@screens": "./src/screens",
+                    "@services": "./src/services",
+                    "@styles": "./src/styles",
+                    "@utils": "./src/utils",
+                }
+            }
+        ]
+    }
+}
