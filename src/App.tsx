@@ -18,6 +18,8 @@ import { DMSerifDisplay_400Regular } from "@expo-google-fonts/dm-serif-display";
 
 import COLORS from "../src/styles/theme"
 
+import Login from './screens/Login/Login'
+
 const App: React.FC = () => {
     const [appIsReady, setAppIsReady] = useState(false);
     const [ fontsLoaded ] = useFonts({
@@ -54,21 +56,9 @@ const App: React.FC = () => {
 
     return (
         <ThemeProvider theme={COLORS}>
-            <StatusBar
-            style='dark'
-            translucent
-            backgroundColor='transparent'
-            />
-            <View style={{
-                flex: 1,
-                justifyContent: "center",
-                alignItems: "center",
-                }}
-                onLayout={onLayoutRootView}>
-                <Text style={{
-                    fontFamily: 'Poppins_400Regular', fontSize: 20 }}>
-                    App carregado!
-                </Text>
+            <StatusBar style='dark' translucent backgroundColor='transparent'/>
+            <View>
+                <Login/>
             </View>
         </ThemeProvider>
     );
