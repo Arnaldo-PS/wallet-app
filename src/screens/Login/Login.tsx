@@ -35,17 +35,8 @@ const Login = () => {
 
                 <ContentHeader>
                     <Title>
-                        Seja bem vindo(a) {"\n"} ao App Carteira
+                        Grana
                     </Title>
-
-                    <Description>
-                        Entrar com redes sociais
-                    </Description>
-
-                    <ViewButton>
-                        <ButtonSocialGoogle title="Google" />
-                        <ButtonSocial iconName="facebook" title="Facebook" />
-                    </ViewButton>
                 </ContentHeader>
 
                 <ContentBody>
@@ -71,12 +62,11 @@ const Login = () => {
                         autoCorrect={false}
                         keyboardType='default'
                         placeholder="Digite sua senha"
-
                     />
 
                     <Button
                         title="Entrar"
-                        variant="primary"
+                        variant="login"
                         onPress={onPressButton}
                     />
                 </ContentBody>
@@ -86,6 +76,15 @@ const Login = () => {
                         <TitleButtonSignUp1>Não tem cadastro ainda?</TitleButtonSignUp1>
                         <TitleButtonSignUp2>Cadastre-se</TitleButtonSignUp2>
                     </ButtonSignUp>
+
+                    <Description>
+                        Entrar com redes sociais
+                    </Description>
+
+                    <ViewButton>
+                        <ButtonSocialGoogle title="Google" />
+                        <ButtonSocial iconName="facebook" title="Facebook" />
+                    </ViewButton>
                 </ContentFooter>
 
             </Container>

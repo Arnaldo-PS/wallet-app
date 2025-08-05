@@ -5,10 +5,10 @@ import { RFValue } from "react-native-responsive-fontsize";
 export const Button = styled(RectButton)`
     flex-direction: row;
     align-items: center;
-    width: ${RFValue(125)}px;
+    width: ${RFValue(105)}px;
     height: ${RFValue(50)}px;
     justify-content: center;
-    border-radius: ${RFValue(10)}px;
+    border-radius: ${RFValue(16)}px;
     background-color: ${({ theme }) => theme.COLORS.WHITE_100};
 `;
 
@@ -18,8 +18,9 @@ export const IconeGoogle = styled.Image`
 `;
 
 export const Title = styled.Text`
-    font-size: ${RFValue(17)}px;
-    margin-left: ${RFValue(10)}px;
+    font-size: ${RFValue(13)}px;
+    margin-left: ${RFValue(7)}px;
+    color: ${({ theme }) => theme.COLORS.GRAY3};
     font-family: ${({ theme }) => theme.FONTS.POPPINSLIGHT};
 `;
 

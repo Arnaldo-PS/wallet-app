@@ -100,8 +100,34 @@ const buttonBlack: ButtonVariant = {
     }
 }
 
+const buttonLogin: ButtonVariant = {
+    enabled: {
+        button:{
+            backgroundColor: theme.COLORS.PURPLEDARK3,
+        },
+        title:{
+            color: theme.COLORS.ORANGE_300,
+        },
+        icon:{
+            color: theme.COLORS.ORANGE_300,
+        }
+    },
+    disabled: {
+        button:{
+            backgroundColor: theme.COLORS.GRAY_100,
+        },
+        title:{
+            color: theme.COLORS.WHITE,
+        },
+        icon:{
+            color: theme.COLORS.WHITE,
+        }
+    }
+}
+
 export const variants = {
     primary: buttonPrimary,
     outline: buttonOutline,
-    black: buttonBlack
+    black: buttonBlack,
+    login: buttonLogin
 }

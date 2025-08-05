@@ -7,20 +7,20 @@ export const Button = styled(RectButton)`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: ${RFValue(125)}px;
+    width: ${RFValue(105)}px;
     height: ${RFValue(50)}px;
-    border-radius: ${RFValue(10)}px;
+    border-radius: ${RFValue(16)}px;
     background-color: ${({ theme }) => theme.COLORS.BLUE};
 `;
 
 export const FacebookIcon = styled(Fontisto)`
-    font-size: ${RFValue(20)}px;
+    font-size: ${RFValue(15)}px;
     color: ${({ theme }) => theme.COLORS.WHITE};
 `;
 
 export const Title = styled.Text`
-    font-size: ${RFValue(17)}px;
-    margin-left: ${RFValue(10)}px;
+    font-size: ${RFValue(13)}px;
+    margin-left: ${RFValue(8)}px;
     font-family: ${({ theme }) => theme.FONTS.POPPINSLIGHT};
     color: ${({ theme }) => theme.COLORS.WHITE};
 `;

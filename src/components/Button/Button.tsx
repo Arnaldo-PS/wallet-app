@@ -4,6 +4,7 @@ import { Container, Title, Content } from './styles'
 import { AntDesign } from '@expo/vector-icons'
 import { variants } from './Variant';
 import { useTheme } from 'styled-components';
+import { LinearGradient } from 'expo-linear-gradient';
 
 interface IButtonProps {
     title: string;
@@ -34,7 +35,7 @@ export const Button: React.FC<IButtonProps> = ({
             onPress={onPress}
             style={[buttonStyle.button, style]}
         >
-            {isLoading? (
+            {isLoading ? (
                 <ActivityIndicator color={COLORS.GRAY1} />
             ) : (
                 <Content>

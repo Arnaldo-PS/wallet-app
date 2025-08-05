@@ -12,6 +12,8 @@ export const ContentHeader = styled.View`
     padding: ${RFValue(20)}px;
     align-items: center;
     justify-content: center;
+    padding-bottom: ${RFValue(120)}px;
+    padding-top: ${RFValue(70)}px;
 `;
 
 export const ContentBody = styled.View`
@@ -21,25 +23,30 @@ export const ContentBody = styled.View`
 
 export const Title = styled.Text`
     text-align: center;
-    font-size: ${RFValue(25)}px;
+    font-size: ${RFValue(32)}px;
     margin-top: ${RFValue(40)}px;
-    font-family: ${({ theme }) => theme.FONTS.POPPINSMEDIUM}
+    color: ${({ theme }) => theme.COLORS.WHITE};
+    font-family: ${({ theme }) => theme.FONTS.POPPINSMEDIUM};
 `;
 
 export const Description = styled.Text`
-    margin-top: ${RFValue(60)}px;
-    margin-bottom: ${RFValue(10)}px;
-    font-size: ${RFValue(15)}px;
-    font-family: ${({ theme }) => theme.FONTS.POPPINSLIGHT}
+    margin-top: ${RFValue(80)}px;
+    font-size: ${RFValue(12)}px;
+    color: ${({ theme }) => theme.COLORS.WHITE};
+    font-family: ${({ theme }) => theme.FONTS.POPPINSLIGHT};
 `;
 
 export const ViewButton = styled.View`
+    padding: ${RFValue(40)}px;
+    padding-top: ${RFValue(10)}px;
+    gap: ${RFValue(20)}px;
     flex-direction: row;
-    gap: ${RFValue(5)}px;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const ContentFooter = styled.View`
-    margin-top: 30px;
+    margin-top: 10px;
     align-items: center;
     justify-content: center;
 `;
@@ -53,12 +60,12 @@ export const ButtonSignUp = styled(Pressable)`
 export const TitleButtonSignUp1 = styled.Text`
     font-size: 16px;
     font-family: ${({ theme }) => theme.FONTS.POPPINSBOLD};
-    color: ${({ theme }) => theme.COLORS.GRAY4}
+    color: ${({ theme }) => theme.COLORS.GRAY4};
 `;
 
 export const TitleButtonSignUp2 = styled.Text`
     font-size: 16px;
     margin-left: 10px;
     font-family: ${({ theme }) => theme.FONTS.POPPINSBOLD};
-    color: ${({ theme }) => theme.COLORS.BLUE}
+    color: ${({ theme }) => theme.COLORS.BLUE};
 `;

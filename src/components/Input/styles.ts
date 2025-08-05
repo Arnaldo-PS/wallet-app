@@ -5,7 +5,7 @@ export const Container = styled.View`
     height: 60px;
     padding: 0 12px;
     margin-top: 10px;
-    border-radius: 8px;
+    border-radius: 16px;
     align-items: center;
     flex-direction: row;
     justify-content: center;
@@ -18,9 +18,8 @@ export const InputContainer = styled.TextInput`
     height: 50px;
     font-size: 16px;
     border-radius: 8px;
-    font-family: ${({ theme }) => theme.FONTS.POPPINSLIGHT};
+    font-family: ${({ theme }) => theme.FONTS.POPPINSMEDIUM};
     margin-left: 5px;
-    /* background-color: tomato; */
 `;
 
 export const LeftIcon = styled.View`
