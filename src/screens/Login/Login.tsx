@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native'
 import { ButtonSocialGoogle } from '@src/components/ButtonSocialGoogle/ButtonSocialGoogle'
 import { ButtonSocial } from '@src/components/ButtonSocial/ButtonSocial'
 import { useTheme } from 'styled-components'
 import Input from '../../components/Input'
+import { Button}  from '@src/components/Button/Button'
 import {
     Container,
     ContentHeader,
@@ -14,8 +15,16 @@ import {
     ViewButton
  } from './styles'
 
-const Login: React.FC = () => {
+const Login = () => {
     const { COLORS } = useTheme();
+    const [loading, setLoading] = useState(false);
+
+    function onPressButton() {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000);
+    }
 
   return (
     <SafeAreaView>
@@ -50,6 +59,12 @@ const Login: React.FC = () => {
                     iconName="lock-outline"
                     iconColor={COLORS.BLACK}
                     placeholder="Digite sua senha"
+                />
+
+                <Button
+                    title="Entrar"
+                    variant="primary"
+                    onPress={onPressButton}
                 />
             </ContentBody>
 
