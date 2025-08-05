@@ -1,19 +1,30 @@
-import React from 'react'
-import { MaterialIcons } from '@expo/vector-icons'
+import React, { useState } from 'react'
+import { AntDesign, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons'
 import { useTheme } from 'styled-components'
 import { Container, InputContainer, LeftIcon, RightIcon } from './styles'
-import { TextInputProps } from 'react-native';
+import { TextInputProps, TouchableOpacity } from 'react-native';
 
-interface InputProps {
+interface InputProps extends TextInputProps{
     rightIcon?: boolean;
     leftIcon?: boolean;
-    iconName: string;
+    iconName: keyof typeof AntDesign.glyphMap;
     iconSize?: number;
     iconColor?: string;
+    secureTextEntry?: boolean;
 }
 
-const Input: React.FC<InputProps & TextInputProps> = ({ rightIcon, leftIcon, iconName, iconSize, iconColor, ...rest }) => {
+const Input = ({
+    rightIcon,
+    leftIcon,
+    iconName,
+    iconSize,
+    iconColor,
+    secureTextEntry,
+    ...rest
+}: InputProps) => {
     const { COLORS } = useTheme();
+
+    const [secury, setSecury] = useState();
 
     return (
         <Container>
@@ -28,15 +39,19 @@ const Input: React.FC<InputProps & TextInputProps> = ({ rightIcon, leftIcon, ico
             )}
             <InputContainer
                 {...rest}
-                placeholderTextColor={COLORS.BLACK}
+                secureTextEntry={secury}
+                underlineColorAndroid='transparent'
+                placeholderTextColor={COLORS.GRAY3}
             />
             {rightIcon && (
                 <RightIcon>
-                    <MaterialIcons
-                        name={iconName}
-                        size={iconSize}
-                        color={iconColor || COLORS.BLACK}
-                    />
+                    <TouchableOpacity onPress={() => setSecury(!secury)}>
+                        <MaterialCommunityIcons
+                            name={secury ? 'eye' : 'eye-off'}
+                            size={iconSize}
+                            color={iconColor || COLORS.GRAY3}
+                        />
+                    </TouchableOpacity>
                 </RightIcon>
             )}
         </Container>

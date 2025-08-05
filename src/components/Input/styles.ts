@@ -1,32 +1,32 @@
 import styled from "styled-components/native";
 
 export const Container = styled.View`
-    height: 60px;
     width: 100%;
+    height: 60px;
     padding: 0 12px;
-    justify-content: center;
-    border-radius: 8px;
     margin-top: 10px;
-    flex-direction: row;
+    border-radius: 8px;
     align-items: center;
+    flex-direction: row;
+    justify-content: center;
     background-color: ${({ theme }) => theme.COLORS.GRAY6};
 `;
 
 export const InputContainer = styled.TextInput`
     border: 0;
-    width: 85%;
-    height: 45px;
+    flex: 1;
+    height: 50px;
+    font-size: 16px;
     border-radius: 8px;
     font-family: ${({ theme }) => theme.FONTS.POPPINSLIGHT};
-    font-size: 14px;
+    margin-left: 5px;
+    /* background-color: tomato; */
 `;
 
 export const LeftIcon = styled.View`
-    position: absolute;
-    left: 10px;
+
 `;
 
 export const RightIcon = styled.View`
-    position: absolute;
-    right: 10px;
+
 `;

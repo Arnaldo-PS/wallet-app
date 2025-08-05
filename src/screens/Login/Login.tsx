@@ -49,16 +49,26 @@ const Login = () => {
                 <Input
                     leftIcon
                     iconSize={25}
-                    iconName="mail-outline"
+                    secureTextEntry={false}
+                    iconName="mail"
                     iconColor={COLORS.BLACK}
+                    autoCapitalize='none'
+                    autoCorrect={false}
+                    keyboardType='email-address'
                     placeholder="Digite seu e-mail"
                 />
                 <Input
                     leftIcon
+                    rightIcon
                     iconSize={25}
-                    iconName="lock-outline"
+                    secureTextEntry
+                    iconName="lock"
                     iconColor={COLORS.BLACK}
+                    autoCapitalize='none'
+                    autoCorrect={false}
+                    keyboardType='default'
                     placeholder="Digite sua senha"
+
                 />
 
                 <Button

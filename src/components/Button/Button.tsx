@@ -1,7 +1,7 @@
 import React from 'react'
 import { ActivityIndicator, TouchableOpacityProps } from 'react-native';
 import { Container, Title, Content } from './styles'
-import { AntDesign, MaterialIcons } from '@expo/vector-icons'
+import { AntDesign } from '@expo/vector-icons'
 import { variants } from './Variant';
 import { useTheme } from 'styled-components';
 
