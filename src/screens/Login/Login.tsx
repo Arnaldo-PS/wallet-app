@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { SafeAreaView } from 'react-native'
+import { SafeAreaView, Text } from 'react-native'
 import { ButtonSocialGoogle } from '@src/components/ButtonSocialGoogle/ButtonSocialGoogle'
 import { ButtonSocial } from '@src/components/ButtonSocial/ButtonSocial'
 import { useTheme } from 'styled-components'
@@ -16,6 +16,9 @@ import {
     TitleButtonSignUp1,
     TitleButtonSignUp2,
     ButtonSignUp,
+    ContentForgotPassword,
+    ContentButtonForgotPassword,
+    ContentTextForgotPassword,
 } from './styles'
 
 const Login = () => {
@@ -64,6 +67,12 @@ const Login = () => {
                         placeholder="Digite sua senha"
                     />
 
+                    <ContentForgotPassword>
+                        <ContentButtonForgotPassword onPress={() => {}}>
+                            <ContentTextForgotPassword>Recuperar Senha</ContentTextForgotPassword>
+                        </ContentButtonForgotPassword>
+                    </ContentForgotPassword>
+
                     <Button
                         title="Entrar"
                         variant="login"
@@ -72,7 +81,7 @@ const Login = () => {
                 </ContentBody>
 
                 <ContentFooter>
-                    <ButtonSignUp>
+                    <ButtonSignUp onPress={() => {}}>
                         <TitleButtonSignUp1>Não tem cadastro ainda?</TitleButtonSignUp1>
                         <TitleButtonSignUp2>Cadastre-se</TitleButtonSignUp2>
                     </ButtonSignUp>
