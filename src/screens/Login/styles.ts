@@ -2,9 +2,8 @@ import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
 
 export const Container = styled.View`
-    padding-top: ${RFValue(10)}px;
-    padding-bottom: ${RFValue(10)}px;
-    padding-left: ${RFValue(5)}px;
+    padding: ${RFValue(5)}px;
+    padding-top: ${RFValue(20)}px;
 `;
 
 export const ContentHeader = styled.View`
@@ -14,7 +13,8 @@ export const ContentHeader = styled.View`
 `;
 
 export const ContentBody = styled.View`
-
+    padding-left: 20px;
+    padding-right: 20px;
 `;
 
 export const ContentFooter = styled.View`
