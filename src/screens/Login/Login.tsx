@@ -4,7 +4,7 @@ import { ButtonSocialGoogle } from '@src/components/ButtonSocialGoogle/ButtonSoc
 import { ButtonSocial } from '@src/components/ButtonSocial/ButtonSocial'
 import { useTheme } from 'styled-components'
 import Input from '../../components/Input'
-import { Button}  from '@src/components/Button/Button'
+import { Button } from '@src/components/Button/Button'
 import {
     Container,
     ContentHeader,
@@ -12,8 +12,11 @@ import {
     ContentFooter,
     Title,
     Description,
-    ViewButton
- } from './styles'
+    ViewButton,
+    TitleButtonSignUp1,
+    TitleButtonSignUp2,
+    ButtonSignUp,
+} from './styles'
 
 const Login = () => {
     const { COLORS } = useTheme();
@@ -26,65 +29,68 @@ const Login = () => {
         }, 2000);
     }
 
-  return (
-    <SafeAreaView>
-        <Container>
+    return (
+        <SafeAreaView>
+            <Container>
 
-            <ContentHeader>
-                <Title>
-                    Seja bem vindo(a) {"\n"} ao App Carteira
-                </Title>
+                <ContentHeader>
+                    <Title>
+                        Seja bem vindo(a) {"\n"} ao App Carteira
+                    </Title>
 
-                <Description>
-                    Entrar com redes sociais
-                </Description>
+                    <Description>
+                        Entrar com redes sociais
+                    </Description>
 
-                <ViewButton>
-                    <ButtonSocialGoogle title="Google"/>
-                    <ButtonSocial iconName="facebook" title="Facebook"/>
-                </ViewButton>
-            </ContentHeader>
+                    <ViewButton>
+                        <ButtonSocialGoogle title="Google" />
+                        <ButtonSocial iconName="facebook" title="Facebook" />
+                    </ViewButton>
+                </ContentHeader>
 
-            <ContentBody>
-                <Input
-                    leftIcon
-                    iconSize={25}
-                    secureTextEntry={false}
-                    iconName="mail"
-                    iconColor={COLORS.BLACK}
-                    autoCapitalize='none'
-                    autoCorrect={false}
-                    keyboardType='email-address'
-                    placeholder="Digite seu e-mail"
-                />
-                <Input
-                    leftIcon
-                    rightIcon
-                    iconSize={25}
-                    secureTextEntry
-                    iconName="lock"
-                    iconColor={COLORS.BLACK}
-                    autoCapitalize='none'
-                    autoCorrect={false}
-                    keyboardType='default'
-                    placeholder="Digite sua senha"
+                <ContentBody>
+                    <Input
+                        leftIcon
+                        iconSize={25}
+                        secureTextEntry={false}
+                        iconName="mail"
+                        iconColor={COLORS.BLACK}
+                        autoCapitalize='none'
+                        autoCorrect={false}
+                        keyboardType='email-address'
+                        placeholder="Digite seu e-mail"
+                    />
+                    <Input
+                        leftIcon
+                        rightIcon
+                        iconSize={25}
+                        secureTextEntry
+                        iconName="lock"
+                        iconColor={COLORS.BLACK}
+                        autoCapitalize='none'
+                        autoCorrect={false}
+                        keyboardType='default'
+                        placeholder="Digite sua senha"
 
-                />
+                    />
 
-                <Button
-                    title="Entrar"
-                    variant="primary"
-                    onPress={onPressButton}
-                />
-            </ContentBody>
+                    <Button
+                        title="Entrar"
+                        variant="primary"
+                        onPress={onPressButton}
+                    />
+                </ContentBody>
 
-            <ContentFooter>
+                <ContentFooter>
+                    <ButtonSignUp>
+                        <TitleButtonSignUp1>Não tem cadastro ainda?</TitleButtonSignUp1>
+                        <TitleButtonSignUp2>Cadastre-se</TitleButtonSignUp2>
+                    </ButtonSignUp>
+                </ContentFooter>
 
-            </ContentFooter>
-
-        </Container>
-    </SafeAreaView>
-  )
+            </Container>
+        </SafeAreaView>
+    )
 }
 
 export default Login;
