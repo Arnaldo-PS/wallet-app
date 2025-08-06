@@ -12,8 +12,8 @@ export const ContentHeader = styled.View`
     padding: ${RFValue(20)}px;
     align-items: center;
     justify-content: center;
-    padding-bottom: ${RFValue(100)}px;
-    padding-top: ${RFValue(70)}px;
+    padding-bottom: ${RFValue(90)}px;
+    padding-top: ${RFValue(80)}px;
 `;
 
 export const ContentBody = styled.View`
@@ -87,4 +87,9 @@ export const ContentTextForgotPassword = styled.Text`
     font-size: 16px;
     font-family: ${({ theme }) => theme.FONTS.POPPINSBOLD};
     color: ${({ theme }) => theme.COLORS.WHITE};
+`;
+
+export const TextDivider = styled.Text`
+    font-size: 16px;
+    font-family: ${({ theme }) => theme.FONTS.POPPINSMEDIUM};
 `;

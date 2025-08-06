@@ -11,7 +11,7 @@ interface ButtonStyle {
         color: string;
     }
 
-    icon: {
+    icon?: {
         color: string;
     }
 };
@@ -125,9 +125,29 @@ const buttonLogin: ButtonVariant = {
     }
 }
 
+const buttonTransparent: ButtonVariant = {
+    enabled: {
+        button:{
+            backgroundColor: 'transparent',
+        },
+        title:{
+            color: theme.COLORS.GRAY2,
+        }
+    },
+    disabled: {
+        button:{
+            backgroundColor: 'transparent',
+        },
+        title:{
+            color: theme.COLORS.GRAY2,
+        }
+    }
+}
+
 export const variants = {
     primary: buttonPrimary,
     outline: buttonOutline,
     black: buttonBlack,
-    login: buttonLogin
+    login: buttonLogin,
+    transparent: buttonTransparent
 }

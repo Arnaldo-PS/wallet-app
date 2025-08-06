@@ -21,6 +21,10 @@ export const Title = styled.Text`
 `;
 
 export const Content = styled.View`
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 12px;
     font-size: ${RFValue(15)}px;
     font-family: ${({ theme }) => theme.FONTS.POPPINSMEDIUM};
     color: ${({ theme }) => theme.COLORS.BLACK};
