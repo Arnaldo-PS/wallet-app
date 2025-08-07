@@ -29,4 +29,5 @@ export const UserName = styled.Text`
     font-family: ${({ theme }) => theme.FONTS.POPPINSBOLD};
     color: ${({ theme }) => theme.COLORS.WHITE};
     font-size: ${RFValue(16)}px;
+    margin-top: -${RFValue(5)}px;
 `;

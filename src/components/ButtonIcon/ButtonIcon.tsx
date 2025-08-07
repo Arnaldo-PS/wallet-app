@@ -1,5 +1,5 @@
 import React from 'react'
-import { ActivityIndicator, TouchableOpacityProps } from 'react-native';
+import { TouchableOpacityProps } from 'react-native';
 import { Container, Title, Content } from './styles'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { variants } from './Variant';
@@ -7,8 +7,8 @@ import { useTheme } from 'styled-components';
 
 interface IButtonProps {
     onPress: () => void;
+    title?: string,
     iconName?: keyof typeof MaterialCommunityIcons.glyphMap;
-    isLoading?: boolean;
     disabled?: boolean;
     variant?: 'home';
     style?: TouchableOpacityProps['style'];
@@ -16,7 +16,7 @@ interface IButtonProps {
 
 export const ButtonIcon: React.FC<IButtonProps> = ({
     onPress = () => { },
-    isLoading,
+    title,
     iconName,
     disabled,
     variant = 'home',
@@ -28,26 +28,22 @@ export const ButtonIcon: React.FC<IButtonProps> = ({
 
     return (
         <Container
-            disabled={isLoading || disabled}
             onPress={onPress}
             style={[buttonStyle.button, style]}
         >
-            {isLoading ? (
-                <ActivityIndicator color={COLORS.GRAY1} />
-            ) : (
-                <Content>
-                    {iconName && (
-                        <MaterialCommunityIcons
-                            name={iconName}
-                            color={COLORS.GREEN4}
-                            style={{
-                                marginRight: 0,
-                            }}
-                            size={35}
-                        />
-                    )}
-                </Content>
-            )}
+            <Content>
+                {iconName && (
+                    <MaterialCommunityIcons
+                        name={iconName}
+                        color={COLORS.BLUE_PURPLE}
+                        style={{
+                            marginRight: 0,
+                        }}
+                        size={40}
+                    />
+                )}
+                <Title>{title}</Title>
+            </Content>
         </Container>
     )
 }

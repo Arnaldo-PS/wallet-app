@@ -21,7 +21,7 @@ const buttonHome: ButtonVariant = {
     enabled: {
         button:{
             backgroundColor: 'transparent',
-            borderColor: theme.COLORS.GREEN4,
+            //borderColor: theme.COLORS.GREEN4,
             borderWidth: 1
         },
         icon:{

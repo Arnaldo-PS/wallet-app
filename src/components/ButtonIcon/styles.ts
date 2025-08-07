@@ -14,7 +14,7 @@ export const Title = styled.Text`
     flex-direction: row;
     align-items: center;
     justify-content:center;
-    font-size: 18px;
+    font-size: ${RFValue(10)}px;
     font-family: ${({ theme }) => theme.FONTS.POPPINSMEDIUM};
     color: ${({ theme }) => theme.COLORS.WHITE};
 `;
@@ -22,9 +22,11 @@ export const Title = styled.Text`
 export const Content = styled.View`
     align-items: center;
     justify-content: center;
-    flex-direction: row;
-    gap: 12px;
     font-size: ${RFValue(15)}px;
     font-family: ${({ theme }) => theme.FONTS.POPPINSMEDIUM};
     color: ${({ theme }) => theme.COLORS.BLACK};
+    background-color: ${({ theme }) => theme.COLORS.BLACK_200};
+    width: ${RFValue(60)}px;
+    height: ${RFValue(60)}px;
+    border-radius: 12px;
 `;

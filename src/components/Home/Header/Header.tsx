@@ -7,10 +7,10 @@ import {
     UserName
 } from './styles'
 
-export const HomeHeader = () => {
+export const Header = () => {
     return (
         <Container>
-            <UserPhoto source={require('../../assets/caverinha.jpg')} />
+            <UserPhoto source={require('../../../assets/caverinha.jpg')} />
             <WelcomeContent>
                 <WelcomeTitle>Boa noite!</WelcomeTitle>
                 <UserName>Arnaldo</UserName>
