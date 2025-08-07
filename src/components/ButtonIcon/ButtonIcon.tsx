@@ -1,27 +1,25 @@
 import React from 'react'
 import { ActivityIndicator, TouchableOpacityProps } from 'react-native';
 import { Container, Title, Content } from './styles'
-import { AntDesign } from '@expo/vector-icons'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { variants } from './Variant';
 import { useTheme } from 'styled-components';
 
 interface IButtonProps {
-    title: string;
     onPress: () => void;
-    iconName?: keyof typeof AntDesign.glyphMap;
+    iconName?: keyof typeof MaterialCommunityIcons.glyphMap;
     isLoading?: boolean;
     disabled?: boolean;
-    variant?: 'primary' | 'outline' | 'black' | 'login' | 'transparent';
+    variant?: 'home';
     style?: TouchableOpacityProps['style'];
 }
 
-export const Button: React.FC<IButtonProps> = ({
-    title,
+export const ButtonIcon: React.FC<IButtonProps> = ({
     onPress = () => { },
     isLoading,
     iconName,
     disabled,
-    variant = 'primary',
+    variant = 'home',
     style,
 }) => {
     const { COLORS } = useTheme();
@@ -39,16 +37,15 @@ export const Button: React.FC<IButtonProps> = ({
             ) : (
                 <Content>
                     {iconName && (
-                        <AntDesign
+                        <MaterialCommunityIcons
                             name={iconName}
-                            color={COLORS.WHITE}
+                            color={COLORS.GREEN4}
                             style={{
                                 marginRight: 0,
                             }}
-                            size={25}
+                            size={35}
                         />
                     )}
-                    <Title>{title}</Title>
                 </Content>
             )}
         </Container>

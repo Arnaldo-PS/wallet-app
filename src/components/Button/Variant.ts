@@ -78,7 +78,7 @@ const buttonOutline: ButtonVariant = {
 const buttonBlack: ButtonVariant = {
     enabled: {
         button:{
-            backgroundColor: theme.COLORS.BLACK,
+            backgroundColor: theme.COLORS.BLACK_200,
         },
         title:{
             color: theme.COLORS.ORANGE_300,
@@ -103,7 +103,7 @@ const buttonBlack: ButtonVariant = {
 const buttonLogin: ButtonVariant = {
     enabled: {
         button:{
-            backgroundColor: theme.COLORS.PURPLEDARK3,
+            backgroundColor: theme.COLORS.BLUE_PURPLE,
         },
         title:{
             color: theme.COLORS.ORANGE_300,

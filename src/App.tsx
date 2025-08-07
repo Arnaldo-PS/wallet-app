@@ -13,13 +13,9 @@ import {
     Poppins_800ExtraBold
 } from "@expo-google-fonts/poppins"
 import { Routes } from './routes'
-import { Login } from './screens/Auth/Login'
 import { DMSans_400Regular } from "@expo-google-fonts/dm-sans"
 import { DMSerifDisplay_400Regular } from "@expo-google-fonts/dm-serif-display";
-
 import theme from "../src/styles/theme"
-import { LinearGradient } from 'expo-linear-gradient';
-
 
 const App: React.FC = () => {
     const [appIsReady, setAppIsReady] = useState(false);
@@ -56,25 +52,19 @@ const App: React.FC = () => {
     }
 
     return (
-        <LinearGradient
-            colors={['rgba(42,123,155,1)', 'rgba(30,140,10,100)', 'rgba(87,199,133,1)']}
-            start={{ x: 0, y: 1 }}
-            end={{ x: 0, y: 0 }}
-            style={{ flex: 1 }}
-        >
-            <ThemeProvider theme={theme}>
-                <NavigationContainer>
-                    <StatusBar style='dark' translucent backgroundColor='transparent' />
-                    <View
-                        style={{
-                            flex: 1,
-                        }}
-                    >
-                        <Routes />
-                    </View>
-                </NavigationContainer>
-            </ThemeProvider>
-        </LinearGradient>
+        <ThemeProvider theme={theme}>
+            <NavigationContainer>
+                <StatusBar style='dark' translucent backgroundColor='transparent' />
+                <View
+                    style={{
+                        flex: 1,
+                        backgroundColor: theme.COLORS.BLACK_100
+                    }}
+                >
+                    <Routes />
+                </View>
+            </NavigationContainer>
+        </ThemeProvider>
     );
 }
 

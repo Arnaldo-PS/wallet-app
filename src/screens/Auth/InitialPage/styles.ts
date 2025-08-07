@@ -3,6 +3,8 @@ import { RFValue } from "react-native-responsive-fontsize";
 
 export const Container = styled.View`
     padding: ${RFValue(20)}px;
+    background-color: ${({ theme }) => theme.COLORS.BLACK_100};
+    height: 100%;
 `;
 
 export const ContentBody = styled.View`
@@ -20,7 +22,7 @@ export const ContentHeader = styled.View`
 export const Title = styled.Text`
     text-align: center;
     font-size: ${RFValue(18)}px;
-    color: ${({ theme }) => theme.COLORS.WHITE};
+    color: ${({ theme }) => theme.COLORS.GREEN4};
     font-family: ${({ theme }) => theme.FONTS.POPPINSBOLD};
 `;
 

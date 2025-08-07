@@ -5,6 +5,8 @@ import { Pressable } from "react-native";
 export const Container = styled.View`
     padding: ${RFValue(5)}px;
     padding-top: ${RFValue(20)}px;
+    height: 100%;
+    background-color: ${({ theme }) => theme.COLORS.BLACK_100};
 `;
 
 export const ContentHeader = styled.View`
@@ -25,7 +27,7 @@ export const Title = styled.Text`
     text-align: center;
     font-size: ${RFValue(32)}px;
     margin-top: ${RFValue(40)}px;
-    color: ${({ theme }) => theme.COLORS.WHITE};
+    color: ${({ theme }) => theme.COLORS.GREEN4};
     font-family: ${({ theme }) => theme.FONTS.POPPINSMEDIUM};
 `;
 
@@ -67,7 +69,7 @@ export const TitleButtonSignUp2 = styled.Text`
     font-size: 16px;
     margin-left: 10px;
     font-family: ${({ theme }) => theme.FONTS.POPPINSBOLD};
-    color: ${({ theme }) => theme.COLORS.BLUE};
+    color: ${({ theme }) => theme.COLORS.GREEN4};
 `;
 
 export const ContentForgotPassword = styled.View`

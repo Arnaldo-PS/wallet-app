@@ -1,6 +1,5 @@
 import React from 'react'
 import { Container, ContentBody, Description, Title, ContentHeader } from './styles'
-import { LinearGradient } from 'expo-linear-gradient'
 import { Button } from '@src/components/Button'
 import { useNavigation } from '@react-navigation/native'
 
@@ -16,12 +15,6 @@ export const InitialPage = () => {
     }
 
     return (
-        <LinearGradient
-            colors={['rgba(42,123,155,1)', 'rgba(30,140,10,100)', 'rgba(87,199,133,1)']}
-            start={{ x: 0, y: 1 }}
-            end={{ x: 0, y: 0 }}
-            style={{ flex: 1 }}
-        >
             <Container>
                 <ContentHeader>
                     <Title>Assuma o controle da sua vida financeira hoje!</Title>
@@ -48,6 +41,5 @@ export const InitialPage = () => {
                     />
                 </ContentBody>
             </Container>
-        </LinearGradient>
     )
 }

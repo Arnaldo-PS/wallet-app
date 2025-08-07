@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import { SafeAreaView, Text, KeyboardAvoidingView, View } from 'react-native'
-import { ButtonSocialGoogle } from '@src/components/ButtonSocialGoogle/ButtonSocialGoogle'
-import { ButtonSocial } from '@src/components/ButtonSocial/ButtonSocial'
+import { SafeAreaView, Text, KeyboardAvoidingView, View, ScrollView } from 'react-native'
 import { useTheme } from 'styled-components'
 import Input from '@src/components/Input'
 import { Button } from '@src/components/Button/Button'
@@ -11,8 +9,6 @@ import {
     ContentBody,
     ContentFooter,
     Title,
-    Description,
-    ViewButton,
     TitleButtonSignUp1,
     TitleButtonSignUp2,
     ButtonSignUp,
@@ -21,7 +17,6 @@ import {
     ContentTextForgotPassword,
     TextDivider
 } from './styles'
-import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native'
 
 export const Login = () => {
@@ -40,107 +35,92 @@ export const Login = () => {
         navigation.navigate('Register');
     }
 
+    const handleForgotPassword = () => {
+        navigation.navigate('ForgotPassword');
+    }
+
     return (
-        <LinearGradient
-            colors={['rgba(42,123,155,1)', 'rgba(30,140,10,100)', 'rgba(87,199,133,1)']}
-            start={{ x: 0, y: 1 }}
-            end={{ x: 0, y: 0 }}
-            style={{ flex: 1 }}
-        >
-            <KeyboardAvoidingView
-                behavior="position"
-                enabled
-            >
-                <SafeAreaView>
-                    <Container>
+        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ flexGrow: 1}}>
+            <SafeAreaView>
+                <Container>
 
-                        <ContentHeader>
-                            <Title>
-                                Grana
-                            </Title>
-                        </ContentHeader>
+                    <ContentHeader>
+                        <Title>
+                            Grana
+                        </Title>
+                    </ContentHeader>
 
-                        <ContentBody>
-                            <Button
-                                iconName='google'
-                                title="Continuar com Google"
-                                variant="black"
-                                onPress={() => { }}
-                            />
+                    <ContentBody>
+                        <Button
+                            iconName='google'
+                            title="Continuar com Google"
+                            variant="black"
+                            onPress={() => { }}
+                        />
+                        <View style={{
+                            flexDirection: 'row',
+                            alignItems: 'center',
+                            marginVertical: 8,
+                            marginTop: 13
+                        }}>
                             <View style={{
-                                    flexDirection: 'row',
-                                    alignItems: 'center',
-                                    marginVertical: 8,
-                                    marginTop: 13
-                                }}>
-                                    <View style={{
-                                        flex: 1,
-                                        height: 1,
-                                        backgroundColor: COLORS.BLACK,
-                                    }} />
-                                    <TextDivider style={{marginHorizontal: 8, color: COLORS.BLACK}}> ou </TextDivider>
-                                    <View style={{
-                                        flex: 1,
-                                        height: 1,
-                                        backgroundColor: COLORS.BLACK,
-                                    }} />
-                            </View>
-                            <Input
-                                leftIcon
-                                iconSize={25}
-                                secureTextEntry={false}
-                                iconName="mail"
-                                iconColor={COLORS.BLACK}
-                                autoCapitalize='none'
-                                autoCorrect={false}
-                                keyboardType='email-address'
-                                placeholder="Digite seu e-mail"
-                            />
-                            <Input
-                                leftIcon
-                                rightIcon
-                                iconSize={25}
-                                secureTextEntry
-                                iconName="lock"
-                                iconColor={COLORS.BLACK}
-                                autoCapitalize='none'
-                                autoCorrect={false}
-                                keyboardType='default'
-                                placeholder="Digite sua senha"
-                            />
+                                flex: 1,
+                                height: 1,
+                                backgroundColor: COLORS.GREEN4,
+                            }} />
+                            <TextDivider style={{ marginHorizontal: 8, color: COLORS.GREEN4 }}> ou </TextDivider>
+                            <View style={{
+                                flex: 1,
+                                height: 1,
+                                backgroundColor: COLORS.GREEN4,
+                            }} />
+                        </View>
+                        <Input
+                            leftIcon
+                            iconSize={25}
+                            secureTextEntry={false}
+                            iconName="mail"
+                            iconColor={COLORS.BLACK}
+                            autoCapitalize='none'
+                            autoCorrect={false}
+                            keyboardType='email-address'
+                            placeholder="Digite seu e-mail"
+                        />
+                        <Input
+                            leftIcon
+                            rightIcon
+                            iconSize={25}
+                            secureTextEntry
+                            iconName="lock"
+                            iconColor={COLORS.BLACK}
+                            autoCapitalize='none'
+                            autoCorrect={false}
+                            keyboardType='default'
+                            placeholder="Digite sua senha"
+                        />
 
-                            <ContentForgotPassword>
-                                <ContentButtonForgotPassword onPress={() => { }}>
-                                    <ContentTextForgotPassword>Recuperar Senha</ContentTextForgotPassword>
-                                </ContentButtonForgotPassword>
-                            </ContentForgotPassword>
+                        <ContentForgotPassword>
+                            <ContentButtonForgotPassword onPress={handleForgotPassword}>
+                                <ContentTextForgotPassword>Recuperar Senha</ContentTextForgotPassword>
+                            </ContentButtonForgotPassword>
+                        </ContentForgotPassword>
 
-                            <Button
-                                title="Entrar"
-                                variant="login"
-                                onPress={onPressButton}
-                            />
-                        </ContentBody>
+                        <Button
+                            title="Entrar"
+                            variant="login"
+                            onPress={onPressButton}
+                        />
+                    </ContentBody>
 
-                        <ContentFooter>
-                            <ButtonSignUp onPress={handleRegister}>
-                                <TitleButtonSignUp1>Não tem cadastro ainda?</TitleButtonSignUp1>
-                                <TitleButtonSignUp2>Cadastre-se</TitleButtonSignUp2>
-                            </ButtonSignUp>
+                    <ContentFooter>
+                        <ButtonSignUp onPress={handleRegister}>
+                            <TitleButtonSignUp1>Não tem cadastro ainda?</TitleButtonSignUp1>
+                            <TitleButtonSignUp2>Cadastre-se</TitleButtonSignUp2>
+                        </ButtonSignUp>
+                    </ContentFooter>
 
-                            {/*<Description>
-                                Entrar com redes sociais
-                            </Description>
-
-                             <ViewButton>
-                                <ButtonSocialGoogle title="Google" />
-                                <ButtonSocial iconName="facebook" title="Facebook" />
-                            </ViewButton> */}
-                        </ContentFooter>
-
-                    </Container>
-                </SafeAreaView>
-            </KeyboardAvoidingView>
-        </LinearGradient>
+                </Container>
+            </SafeAreaView>
+        </ScrollView>
     )
 }
