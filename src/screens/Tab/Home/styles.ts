@@ -91,26 +91,6 @@ export const ButtonConteiner = styled.View`
     padding-top: ${RFValue(0)}px;
 `;
 
-export const HeaderContent = styled.View`
-    padding: ${RFValue(10)}px;
-    flex-direction: row;
-    gap: ${RFValue(20)}px;
-`;
-
-export const UserPhoto = styled.View`
-    background-color: ${({ theme }) => theme.COLORS.WHITE};
-    width: ${RFValue(50)}px;
-    height: ${RFValue(50)}px;
-    border-radius: ${RFValue(25)}px;
-`;
-
-export const WelcomeTitle = styled.Text`
-    font-family: ${({ theme }) => theme.FONTS.POPPINSMEDIUM};
-    color: ${({ theme }) => theme.COLORS.WHITE};
-    font-size: ${RFValue(11)}px;
-    margin-top: ${RFValue(5)}px;
-`;
-
 export const CashTitle = styled.View`
     flex-direction: row;
     width: 100%;
@@ -125,4 +105,3 @@ export const CashAmount = styled.View`
     justify-content: space-between;
     padding-horizontal: ${RFValue(10)}px;
 `;
-

@@ -15,22 +15,17 @@ import {
     RecordsConteiner,
     CashTitle,
     CashAmount,
-    ButtonConteiner,
-    HeaderContent,
-    UserPhoto,
-    WelcomeTitle
+    ButtonConteiner
 } from './styles'
 import { ButtonIcon } from '@src/components/ButtonIcon'
+import { HomeHeader } from '@src/components/HomeHeader'
 
 export const Home = () => {
     return (
         <Container>
 
             <Header>
-                <HeaderContent>
-                    <UserPhoto />
-                    <WelcomeTitle>Boa noite, {'\n'} Arnaldo</WelcomeTitle>
-                </HeaderContent>
+                <HomeHeader/>
             </Header>
 
             <Body>
