@@ -4,11 +4,15 @@ import { Container, Title, Content } from './styles'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { variants } from './Variant';
 import { useTheme } from 'styled-components';
+import cashIn from '@assets/cash-in.svg'
+import cashOut from '@assets/cash-out.svg'
+import piggy from '@assets/piggy-plus.svg'
+import wallet from '@assets/wallet-plus.svg'
 
 interface IButtonProps {
     onPress: () => void;
     title?: string,
-    iconName?: keyof typeof MaterialCommunityIcons.glyphMap;
+    iconName?: 'cash-plus' | 'cash-minus' | 'piggy' | 'wallet';
     disabled?: boolean;
     variant?: 'home';
     style?: TouchableOpacityProps['style'];
@@ -26,22 +30,22 @@ export const ButtonIcon: React.FC<IButtonProps> = ({
     const buttonVariant = variants[variant]
     const buttonStyle = disabled ? buttonVariant.disabled : buttonVariant.enabled
 
+      const iconsMap = {
+        'cash-plus': cashIn,
+        'cash-minus': cashOut,
+        'piggy': piggy,
+        'wallet': wallet,
+        };
+
+        const IconComponent = iconName ? iconsMap[iconName] : null;
+
     return (
         <Container
             onPress={onPress}
             style={[buttonStyle.button, style]}
         >
             <Content>
-                {iconName && (
-                    <MaterialCommunityIcons
-                        name={iconName}
-                        color={COLORS.BLUE_PURPLE}
-                        style={{
-                            marginRight: 0,
-                        }}
-                        size={40}
-                    />
-                )}
+                {IconComponent && <IconComponent width={35} height={35} fill={COLORS.GRAY4} />}
                 <Title>{title}</Title>
             </Content>
         </Container>

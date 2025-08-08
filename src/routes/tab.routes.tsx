@@ -26,7 +26,7 @@ export const TabRoutes = () => {
                     marginHorizontal: 20,
                     paddingHorizontal: 10,
                     borderRadius: 30,
-                    backgroundColor: theme.COLORS.BLACK_200,
+                    backgroundColor: theme.COLORS.BLACK_100,
                     paddingTop: 17,
                     height: 75,
                     borderColor: 'transparent'

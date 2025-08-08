@@ -16,7 +16,7 @@ export const Title = styled.Text`
     justify-content:center;
     font-size: ${RFValue(10)}px;
     font-family: ${({ theme }) => theme.FONTS.POPPINSMEDIUM};
-    color: ${({ theme }) => theme.COLORS.WHITE};
+    color: ${({ theme }) => theme.COLORS.GRAY4};
 `;
 
 export const Content = styled.View`
@@ -29,4 +29,5 @@ export const Content = styled.View`
     width: ${RFValue(60)}px;
     height: ${RFValue(60)}px;
     border-radius: 12px;
+    gap: 3px;
 `;

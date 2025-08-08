@@ -54,7 +54,7 @@ const App: React.FC = () => {
     return (
         <ThemeProvider theme={theme}>
             <NavigationContainer>
-                <StatusBar style='dark' translucent backgroundColor='transparent' />
+                <StatusBar style='light' translucent backgroundColor='transparent' />
                 <View
                     style={{
                         flex: 1,

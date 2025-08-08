@@ -1,4 +1,4 @@
-import { Pressable } from "react-native";
+import { TouchableOpacity } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 import styled from "styled-components/native";
 
@@ -42,8 +42,8 @@ export const ContentFlatTitle = styled.Text`
 `;
 
 export const ContentFlatSubTitle = styled.Text`
-    font-size: ${RFValue(8)}px;
-    color: ${({ theme }) => theme.COLORS.WHITE};
+    font-size: ${RFValue(9)}px;
+    color: ${({ theme }) => theme.COLORS.GRAY4};
     font-family: ${({ theme }) => theme.FONTS.POPPINSMEDIUM};
 `;
 
@@ -65,7 +65,7 @@ export const ContentFlatHeader = styled.View`
     justify-content: space-between;
 `;
 
-export const ContentFlatBody = styled.View`
+export const ContentFlatBody = styled(TouchableOpacity)`
     flex-direction: row;
     padding: ${RFValue(5)}px;
 `;
@@ -82,4 +82,8 @@ export const ContentFlatHeaderButton = styled.Text`
     font-size: ${RFValue(14)}px;
     color: ${({ theme }) => theme.COLORS.BLUE_PURPLE};
     font-family: ${({ theme }) => theme.FONTS.POPPINSMEDIUM};
+`;
+
+export const RecordsButton = styled(TouchableOpacity)`
+
 `;

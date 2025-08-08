@@ -13,7 +13,8 @@ import {
     ContentFlatBody,
     ContentFlatHeaderTitle,
     ContentFlatHeaderButton,
-    ContentFlatSubTitle
+    ContentFlatSubTitle,
+    RecordsButton
 } from './styles'
 import { Header } from '@src/components/Home/Header'
 import { Body } from '@src/components/Home/Body'
@@ -33,8 +34,10 @@ export const Home = () => {
             <Footer>
                 <RecordsConteiner>
                     <ContentFlatHeader>
-                        <ContentFlatHeaderTitle>Minhas transações</ContentFlatHeaderTitle>
-                        <ContentFlatHeaderButton>Ver todas</ContentFlatHeaderButton>
+                        <ContentFlatHeaderTitle>Últimas transações</ContentFlatHeaderTitle>
+                        <RecordsButton>
+                            <ContentFlatHeaderButton>Ver todas</ContentFlatHeaderButton>
+                        </RecordsButton>
                     </ContentFlatHeader>
                     <FlatList data={transaction}
                         renderItem={({ item }) => (
