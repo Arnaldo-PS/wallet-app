@@ -26,7 +26,6 @@ export const BalanceImage = styled(TouchableOpacity)`
     margin-top: ${RFValue(16)}px;
 `;
 
-
 export const BalanceTitle = styled.Text`
     padding-left: ${RFValue(3)}px;
     line-height: ${RFValue(14)}px;
@@ -47,26 +46,24 @@ export const BalanceAmount = styled.Text`
 export const BudgetButtonContainer = styled.View`
     background-color: ${({ theme }) => theme.COLORS.BLACK_200};
     border-radius: 12px;
-    padding: ${RFValue(10)}px;
+    padding: ${RFValue(5)}px;
 `;
 
 export const BudgetContainer = styled.View`
     flex-direction: row;
     justify-content: space-between;
-    padding-right: ${RFValue(22)}px;
-    padding-left: ${RFValue(22)}px;
+    padding-right: ${RFValue(15)}px;
+    padding-left: ${RFValue(15)}px;
 `;
 
 export const CashInContainer = styled(TouchableOpacity)`
     align-items: center;
-    /* background-color: ${({ theme }) => theme.COLORS.BLACK_200}; */
     border-radius: 12px;
     padding: ${RFValue(5)}px;
 `;
 
 export const CashOutContainer = styled(TouchableOpacity)`
     align-items: center;
-    /* background-color: ${({ theme }) => theme.COLORS.BLACK_200}; */
     border-radius: 12px;
     padding: ${RFValue(5)}px;
 `;
@@ -79,7 +76,7 @@ export const CashInTitle = styled.Text`
 
 export const CashInAmount = styled.Text`
     color: ${({ theme }) => theme.COLORS.GREEN4};
-    font-size: 24;
+    font-size: ${RFValue(18)}px;
     font-family: ${({ theme }) => theme.FONTS.POPPINSMEDIUM};
 `;
 
@@ -91,7 +88,7 @@ export const CashOutTitle = styled.Text`
 
 export const CashOutAmount = styled.Text`
     color: ${({ theme }) => theme.COLORS.RED};
-    font-size: 24;
+    font-size: ${RFValue(18)}px;
     font-family: ${({ theme }) => theme.FONTS.POPPINSMEDIUM};
 `;
 

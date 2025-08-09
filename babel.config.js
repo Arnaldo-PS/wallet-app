@@ -18,7 +18,8 @@ module.exports = function (api) {
                     "@styles": "./src/styles",
                     "@utils": "./src/utils",
                 }
-            }
+            },
+            'react-native-worklets/plugin'
         ]
         ]
     }

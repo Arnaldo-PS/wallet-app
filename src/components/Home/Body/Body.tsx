@@ -16,35 +16,53 @@ import {
     BudgetButtonContainer,
     BalanceImage
 } from './styles'
-import { ButtonIcon } from '@src/components/ButtonIcon'
+import { ButtonIcon } from '@src/components/Button/ButtonIcon'
 import Wallet from '@assets/wallet.svg';
 import { useTheme } from 'styled-components';
+import { useNavigation } from '@react-navigation/native';
 
 export const Body = () => {
 
     const { COLORS } = useTheme();
+    const navigation = useNavigation();
+    const balanceAmount = 23750;
+    const cashIn = 7200;
+    const cashOut = 2200;
+
+    const handleWallet = () => {
+        navigation.navigate('Wallet');
+    }
 
     return (
         <Container>
             <BalanceContent>
                 <BalanceContainer>
                     <BalanceTitle>Saldo atual</BalanceTitle>
-                    <BalanceAmount>$12,000.00</BalanceAmount>
+                    <BalanceAmount>R$ {new Intl.NumberFormat('pt-BR', {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    }).format(balanceAmount)}</BalanceAmount>
                 </BalanceContainer>
-                <BalanceImage>
-                    <Wallet width={38} height={38} fill={COLORS.GRAY4}/>
+                <BalanceImage onPress={handleWallet}>
+                    <Wallet width={38} height={38} fill={COLORS.GRAY4} />
                 </BalanceImage>
             </BalanceContent>
             <BudgetButtonContainer>
                 <BudgetContainer>
                     <CashInContainer>
                         <CashInTitle>Entradas</CashInTitle>
-                        <CashInAmount>$8,000.00</CashInAmount>
+                        <CashInAmount>R$ {new Intl.NumberFormat('pt-BR', {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    }).format(cashIn)}</CashInAmount>
                     </CashInContainer>
 
                     <CashOutContainer>
                         <CashOutTitle>Saídas</CashOutTitle>
-                        <CashOutAmount>$3,000.00</CashOutAmount>
+                        <CashOutAmount>R$ {new Intl.NumberFormat('pt-BR', {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    }).format(cashOut)}</CashOutAmount>
                     </CashOutContainer>
                 </BudgetContainer>
                 <ButtonContainer>

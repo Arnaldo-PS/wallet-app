@@ -5,6 +5,7 @@ export declare global {
             Login: undefined,
             Register: undefined,
             ForgotPassword: undefined
+            Wallet: undefined
         }
     }
 }

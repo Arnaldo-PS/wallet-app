@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, ContentBody, Description, Title, ContentHeader } from './styles'
-import { Button } from '@src/components/Button'
+import { Button } from '@src/components/Button/Button'
 import { useNavigation } from '@react-navigation/native'
 
 export const InitialPage = () => {

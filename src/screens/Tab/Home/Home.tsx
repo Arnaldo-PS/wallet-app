@@ -19,7 +19,7 @@ import {
 import { Header } from '@src/components/Home/Header'
 import { Body } from '@src/components/Home/Body'
 import { transaction } from '@src/utils/transaction'
-import { FlatList, Text } from 'react-native'
+import { FlatList } from 'react-native'
 
 export const Home = () => {
     return (
@@ -48,7 +48,7 @@ export const Home = () => {
                                         <ContentFlatTitle>{item.title}</ContentFlatTitle>
                                         <ContentFlatSubTitle>{item.subtitle}</ContentFlatSubTitle>
                                     </ContentFlatDescription>
-                                    <ContentFlatAmount>$ {item.amount}</ContentFlatAmount>
+                                    <ContentFlatAmount>R$ {item.amount}</ContentFlatAmount>
                                 </ContentFlatBody>
 
                             </ContentFlat>

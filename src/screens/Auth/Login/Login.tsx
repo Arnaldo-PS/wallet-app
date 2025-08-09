@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { SafeAreaView, Text, KeyboardAvoidingView, View, ScrollView } from 'react-native'
 import { useTheme } from 'styled-components'
-import Input from '@src/components/Input'
+import Input from '@src/components/Input/Input'
 import { Button } from '@src/components/Button/Button'
 import {
     Container,
