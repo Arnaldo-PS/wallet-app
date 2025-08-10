@@ -1,4 +1,5 @@
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import React, { useCallback, useState, useEffect } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
 import { ThemeProvider } from "styled-components/native"
@@ -17,6 +18,7 @@ import { DMSans_400Regular } from "@expo-google-fonts/dm-sans"
 import { DMSerifDisplay_400Regular } from "@expo-google-fonts/dm-serif-display";
 import theme from "../src/styles/theme"
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { Provider as PaperProvider } from 'react-native-paper';
 
 const App: React.FC = () => {
     const [appIsReady, setAppIsReady] = useState(false);
@@ -60,12 +62,16 @@ const App: React.FC = () => {
                         flex: 1
                     }}
                 >
-                    <NavigationContainer>
-                        <StatusBar style='light' translucent backgroundColor='transparent' />
-                        <SafeAreaView edges={['bottom']} style={{ flex: 1, backgroundColor: theme.COLORS.BLACK_100 }}>
-                            <Routes />
-                        </SafeAreaView>
-                    </NavigationContainer>
+                    <PaperProvider>
+                        <BottomSheetModalProvider>
+                            <NavigationContainer>
+                                <StatusBar style='light' translucent backgroundColor='transparent' />
+                                <SafeAreaView edges={['bottom']} style={{ flex: 1, backgroundColor: theme.COLORS.BLACK_100 }}>
+                                    <Routes />
+                                </SafeAreaView>
+                            </NavigationContainer>
+                        </BottomSheetModalProvider>
+                    </PaperProvider>
                 </GestureHandlerRootView>
             </SafeAreaProvider>
         </ThemeProvider >

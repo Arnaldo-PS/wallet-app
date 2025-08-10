@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     Container,
     HeaderContent,
@@ -20,8 +20,17 @@ import { Header } from '@src/components/Home/Header'
 import { Body } from '@src/components/Home/Body'
 import { transaction } from '@src/utils/transaction'
 import { FlatList } from 'react-native'
+import { WalletEditModal } from '@src/components/Modal/WalletEditModal';
+import { Portal } from 'react-native-paper';
 
 export const Home = () => {
+
+    const [newWalletVisible, setNewWalletVisible] = useState(false)
+
+    const handleOpenWallet = () => {
+        setNewWalletVisible(true);
+    };
+
     return (
         <Container>
 
@@ -29,7 +38,7 @@ export const Home = () => {
                 <Header />
             </HeaderContent>
 
-            <Body />
+            <Body onOpenWallet={handleOpenWallet} />
 
             <Footer>
                 <RecordsConteiner>
@@ -55,7 +64,14 @@ export const Home = () => {
                         )} />
                 </RecordsConteiner>
             </Footer>
-
+            <Portal>
+                <WalletEditModal
+                    modalTitle='Adicionar carteira'
+                    visible={newWalletVisible}
+                    onClose={() => setNewWalletVisible(false)}
+                    submitName='Adicionar'
+                />
+            </Portal>
         </Container>
     )
 }

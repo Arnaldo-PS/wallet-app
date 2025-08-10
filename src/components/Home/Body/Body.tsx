@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     Container,
     BalanceContainer,
@@ -21,7 +21,11 @@ import Wallet from '@assets/wallet.svg';
 import { useTheme } from 'styled-components';
 import { useNavigation } from '@react-navigation/native';
 
-export const Body = () => {
+type IBodyProps = {
+    onOpenWallet: () => void;
+}
+
+export const Body = ({ onOpenWallet }: IBodyProps) => {
 
     const { COLORS } = useTheme();
     const navigation = useNavigation();
@@ -88,7 +92,7 @@ export const Body = () => {
                         title="Carteiras"
                         iconName="wallet"
                         variant="home"
-                        onPress={() => { }}
+                        onPress={onOpenWallet}
                     />
                 </ButtonContainer>
             </BudgetButtonContainer>

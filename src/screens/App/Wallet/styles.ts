@@ -4,7 +4,6 @@ import styled from "styled-components/native";
 
 export const Container = styled.View`
     background-color: ${({ theme }) => theme.COLORS.BLACK_100};
-    align-items: center;
     justify-content: center;
     padding: ${RFValue(10)}px;
 `;
@@ -12,21 +11,37 @@ export const Container = styled.View`
 // HEADER
 
 export const Header = styled.View`
-    margin-top: ${RFValue(50)}px;
+    margin-top: ${RFValue(70)}px;
+    flex-direction: row;
+    justify-content: space-between;
 `;
 
-export const BackButton = styled(TouchableOpacity)`
-
+export const BackButton = styled.View`
+    flex-direction: row;
+    gap: ${RFValue(10)}px;
 `;
 
 export const Title = styled.Text`
     font-size: ${RFValue(18)}px;
     color: ${({ theme }) => theme.COLORS.WHITE};
     font-family: ${({ theme }) => theme.FONTS.POPPINSMEDIUM};
+    margin-top: -${RFValue(2)}px;
 `;
 
 export const NewButton = styled(TouchableOpacity)`
+    width: 80px;
+    height: 30px;
+    background-color: ${({ theme }) => theme.COLORS.GREEN4};
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    margin-right: ${RFValue(5)}px;
+`;
 
+export const NewButtonTitle = styled.Text`
+    font-size: ${RFValue(13)}px;
+    color: ${({ theme }) => theme.COLORS.BLACK};
+    font-family: ${({ theme }) => theme.FONTS.POPPINSMEDIUM};
 `;
 
 // BODY
