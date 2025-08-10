@@ -1,6 +1,6 @@
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import React, { useCallback, useState, useEffect } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
-import { View, Text } from "react-native";
 import { ThemeProvider } from "styled-components/native"
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
@@ -16,6 +16,7 @@ import { Routes } from './routes'
 import { DMSans_400Regular } from "@expo-google-fonts/dm-sans"
 import { DMSerifDisplay_400Regular } from "@expo-google-fonts/dm-serif-display";
 import theme from "../src/styles/theme"
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 const App: React.FC = () => {
     const [appIsReady, setAppIsReady] = useState(false);
@@ -53,18 +54,21 @@ const App: React.FC = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <NavigationContainer>
-                <StatusBar style='light' translucent backgroundColor='transparent' />
-                <View
+            <SafeAreaProvider>
+                <GestureHandlerRootView
                     style={{
-                        flex: 1,
-                        backgroundColor: theme.COLORS.BLACK_100
+                        flex: 1
                     }}
                 >
-                    <Routes />
-                </View>
-            </NavigationContainer>
-        </ThemeProvider>
+                    <NavigationContainer>
+                        <StatusBar style='light' translucent backgroundColor='transparent' />
+                        <SafeAreaView edges={['bottom']} style={{ flex: 1, backgroundColor: theme.COLORS.BLACK_100 }}>
+                            <Routes />
+                        </SafeAreaView>
+                    </NavigationContainer>
+                </GestureHandlerRootView>
+            </SafeAreaProvider>
+        </ThemeProvider >
     );
 }
 

@@ -4,23 +4,23 @@ module.exports = function (api) {
         presets: ['babel-preset-expo'],
         plugins: [
             [
-            "module-resolver", {
-                root: ["./src"],
-                extensions: [".js", ".jsx", ".ts", ".tsx"],
-                alias: {
-                    "@assets": "./src/assets",
-                    "@components": "./src/components",
-                    "@config": "./src/config",
-                    "@hook": "./src/hook",
-                    "@routes": "./src/routes",
-                    "@screens": "./src/screens",
-                    "@services": "./src/services",
-                    "@styles": "./src/styles",
-                    "@utils": "./src/utils",
+                "module-resolver", {
+                    root: ["./src"],
+                    extensions: [".js", ".jsx", ".ts", ".tsx"],
+                    alias: {
+                        "@assets": "./src/assets",
+                        "@components": "./src/components",
+                        "@config": "./src/config",
+                        "@hook": "./src/hook",
+                        "@routes": "./src/routes",
+                        "@screens": "./src/screens",
+                        "@services": "./src/services",
+                        "@styles": "./src/styles",
+                        "@utils": "./src/utils",
+                    }
                 }
-            },
-            'react-native-worklets/plugin'
-        ]
+            ],
+            'react-native-reanimated/plugin',
         ]
     }
 }

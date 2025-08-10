@@ -4,7 +4,9 @@ import styled from "styled-components/native";
 export const Container = styled.View`
     background-color: ${({ theme }) => theme.COLORS.BLACK_200};
     padding: ${RFValue(20)}px;
+    padding-top: ${RFValue(0)}px;
     border-radius: 25px;
+    height: 550px;
 `;
 
 export const ModalTitle = styled.Text`
@@ -21,13 +23,15 @@ export const Title = styled.Text`
 `;
 
 export const ObservableContainer = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  padding-right: ${RFValue(6)}px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: ${RFValue(6)}px;
+    margin-top: ${RFValue(6)}px;
 `;
 
 export const ModalActions = styled.View`
-
+    flex-direction: row;
+    justify-content: space-between;
 `;
 
 export const CancelButton = styled.View`
@@ -36,12 +40,6 @@ export const CancelButton = styled.View`
 
 export const SubmitButton = styled.View`
 
-`;
-
-export const ModalContent = styled.View`
-    flex: 1;
-    justify-content: flex-end;
-    align-items: center;
 `;
 
 export const ColorContainer = styled.View`

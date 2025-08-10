@@ -35,7 +35,7 @@ export const Body = () => {
 
     return (
         <Container>
-            <BalanceContent>
+            <BalanceContent onPress={handleWallet}>
                 <BalanceContainer>
                     <BalanceTitle>Saldo atual</BalanceTitle>
                     <BalanceAmount>R$ {new Intl.NumberFormat('pt-BR', {
@@ -43,7 +43,7 @@ export const Body = () => {
                         maximumFractionDigits: 2
                     }).format(balanceAmount)}</BalanceAmount>
                 </BalanceContainer>
-                <BalanceImage onPress={handleWallet}>
+                <BalanceImage>
                     <Wallet width={38} height={38} fill={COLORS.GRAY4} />
                 </BalanceImage>
             </BalanceContent>

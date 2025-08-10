@@ -5,6 +5,10 @@
     "version": "1.0.0",
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "android": {
+      "package": "com.anonymous.walletapp",
+      "edgeToEdge": true
+    }
   }
 }

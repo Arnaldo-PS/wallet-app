@@ -26,15 +26,14 @@ import { useTheme } from 'styled-components';
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { FlatList, TouchableOpacity } from 'react-native';
 import { wallet as walletData } from '@src/utils/wallet'
-import { WalletEditModal } from '@src/components/Modal/WalletEditModal'
+import { WalletEditModal } from '@src/components/Modal/WalletEditModal';
 
 export const Wallet = () => {
 
     const { COLORS } = useTheme();
-
     const [wallet, setWallet] = useState(walletData);
-    const [isEditModalVisible, setEditModalVisible] = useState(false);
-    const [selectedWallet, setSelectedWallet] = useState(null);
+    const [editModalVisible, setEditModalVisible] = useState(false)
+    const [selectedWallet, setSelectedWallet] = useState<any>(null);
 
     const amount = wallet
         .filter(item => item.observable)
@@ -47,16 +46,6 @@ export const Wallet = () => {
             )
         )
     }
-
-    const openEditModal = (item) => {
-        setSelectedWallet(item);
-        setEditModalVisible(true);
-    };
-
-    const closeEditModal = () => {
-        setEditModalVisible(false);
-        setSelectedWallet(null);
-    };
 
     return (
         <Container>
@@ -103,7 +92,10 @@ export const Wallet = () => {
                                             color={item.observable ? COLORS.GREEN4 : COLORS.GRAY4}
                                         />
                                     </TouchableOpacity>
-                                    <TouchableOpacity onPress={openEditModal}>
+                                    <TouchableOpacity onPress={() => {
+                                        setEditModalVisible(true);
+                                        setSelectedWallet(item);
+                                    }}>
                                         <MaterialCommunityIcons
                                             name='file-edit-outline'
                                             size={24}
@@ -126,11 +118,11 @@ export const Wallet = () => {
                     )} />
             </Body>
             <WalletEditModal
-                visible={isEditModalVisible}
-                onClose={closeEditModal}
                 wallet={selectedWallet}
-                modalTitle="Editar Carteira"
-                submitName="Atualizar"
+                modalTitle='Editar carteira'
+                visible={editModalVisible}
+                onClose={() => setEditModalVisible(false)}
+                submitName='Atualizar'
             />
         </Container>
     )

@@ -10,7 +10,7 @@ export const Container = styled.View`
 
 // SALDO ATUAL
 
-export const BalanceContent = styled.View`
+export const BalanceContent = styled(TouchableOpacity)`
     flex-direction: row;
 `;
 
@@ -21,7 +21,7 @@ export const BalanceContainer = styled.View`
     width: 100%;
 `;
 
-export const BalanceImage = styled(TouchableOpacity)`
+export const BalanceImage = styled.View`
     margin-left: -${RFValue(50)}px;
     margin-top: ${RFValue(16)}px;
 `;
@@ -47,6 +47,7 @@ export const BudgetButtonContainer = styled.View`
     background-color: ${({ theme }) => theme.COLORS.BLACK_200};
     border-radius: 12px;
     padding: ${RFValue(5)}px;
+    padding-bottom: ${RFValue(10)}px;
 `;
 
 export const BudgetContainer = styled.View`
@@ -54,6 +55,7 @@ export const BudgetContainer = styled.View`
     justify-content: space-between;
     padding-right: ${RFValue(15)}px;
     padding-left: ${RFValue(15)}px;
+    margin-bottom: -${RFValue(10)}px;
 `;
 
 export const CashInContainer = styled(TouchableOpacity)`
