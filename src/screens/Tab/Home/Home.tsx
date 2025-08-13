@@ -20,7 +20,7 @@ import { Header } from '@src/components/Home/Header'
 import { Body } from '@src/components/Home/Body'
 import { transaction } from '@src/utils/transaction'
 import { FlatList } from 'react-native'
-import { WalletEditModal } from '@src/components/Modal/WalletEditModal';
+import { WalletBottomSheet } from '@src/components/BottomSheet/WalletBottomSheet';
 import { Portal } from 'react-native-paper';
 
 export const Home = () => {
@@ -65,7 +65,7 @@ export const Home = () => {
                 </RecordsConteiner>
             </Footer>
             <Portal>
-                <WalletEditModal
+                <WalletBottomSheet
                     modalTitle='Adicionar carteira'
                     visible={newWalletVisible}
                     onClose={() => setNewWalletVisible(false)}

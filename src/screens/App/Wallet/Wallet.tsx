@@ -27,15 +27,15 @@ import { useTheme } from 'styled-components';
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { FlatList, TouchableOpacity } from 'react-native';
 import { wallet as walletData } from '@src/utils/wallet'
-import { WalletEditModal } from '@src/components/Modal/WalletEditModal';
+import { WalletBottomSheet } from '@src/components/BottomSheet/WalletBottomSheet';
 import { useNavigation } from '@react-navigation/native';
 
 export const Wallet = () => {
 
     const { COLORS } = useTheme();
     const [wallet, setWallet] = useState(walletData);
-    const [editModalVisible, setEditModalVisible] = useState(false)
-    const [newModalVisible, setNewModalVisible] = useState(false)
+    const [editWalletVisible, setEditWalletVisible] = useState(false)
+    const [newWalletVisible, setNewWalletVisible] = useState(false)
     const [selectedWallet, setSelectedWallet] = useState<any>(null);
     const navigation = useNavigation();
 
@@ -60,7 +60,7 @@ export const Wallet = () => {
                     </TouchableOpacity>
                     <Title>Carteiras</Title>
                 </BackButton>
-                <NewButton onPress={() => setNewModalVisible(true)} >
+                <NewButton onPress={() => setNewWalletVisible(true)} >
                     <NewButtonTitle>
                         + Nova
                     </NewButtonTitle>
@@ -105,7 +105,7 @@ export const Wallet = () => {
                                         />
                                     </TouchableOpacity>
                                     <TouchableOpacity onPress={() => {
-                                        setEditModalVisible(true);
+                                        setEditWalletVisible(true);
                                         setSelectedWallet(item);
                                     }}>
                                         <MaterialCommunityIcons
@@ -129,17 +129,17 @@ export const Wallet = () => {
                         </WalletContainer>
                     )} />
             </Body>
-            <WalletEditModal
+            <WalletBottomSheet
                 wallet={selectedWallet}
                 modalTitle='Editar carteira'
-                visible={editModalVisible}
-                onClose={() => setEditModalVisible(false)}
+                visible={editWalletVisible}
+                onClose={() => setEditWalletVisible(false)}
                 submitName='Atualizar'
             />
-            <WalletEditModal
+            <WalletBottomSheet
                 modalTitle='Adicionar carteira'
-                visible={newModalVisible}
-                onClose={() => setNewModalVisible(false)}
+                visible={newWalletVisible}
+                onClose={() => setNewWalletVisible(false)}
                 submitName='Adicionar'
             />
         </Container>

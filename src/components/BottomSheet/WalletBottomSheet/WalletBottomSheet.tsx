@@ -15,7 +15,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { useTheme } from 'styled-components/native';
 import { ButtonBottomSheet } from '@src/components/Button/ButtonBottomSheet'
 
-type WalletEditModalProps = {
+type WalletBottomSheetProps = {
     visible: boolean;
     onClose: () => void;
     wallet?: any;
@@ -23,13 +23,13 @@ type WalletEditModalProps = {
     submitName: string;
 }
 
-export const WalletEditModal = ({
+export const WalletBottomSheet = ({
     visible,
     onClose,
     wallet,
     modalTitle,
     submitName,
-}: WalletEditModalProps) => {
+}: WalletBottomSheetProps) => {
 
     const { COLORS } = useTheme();
     const COLORSMAP = ['#4CAF50', '#2196F3', '#FFC107', '#9C27B0', '#F44336', '#E91E63', '#00BCD4', '#8BC34A'];
@@ -66,6 +66,7 @@ export const WalletEditModal = ({
     return (
         <BottomSheet
             ref={bottomSheetRef}
+            snapPoints={['60%']}
             index={-1}
             handleIndicatorStyle={{ backgroundColor: "transparent" }}
             backgroundStyle={{ backgroundColor: COLORS.BLACK_200 }}
