@@ -12,6 +12,8 @@ export const Container = styled.View`
     flex-direction: row;
     justify-content: center;
     background-color: ${({ theme }) => theme.COLORS.BLACK_300};
+    border-width: 1px;
+    border-color: ${({ theme }) => theme.COLORS.WHITE + '50'};
 `;
 
 export const InputContainer = styled.TextInput`

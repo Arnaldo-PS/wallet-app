@@ -23,9 +23,14 @@ import { useNavigation } from '@react-navigation/native';
 
 type IBodyProps = {
     onOpenWallet: () => void;
+    onOpenEntrada: () => void;
+    onOpenSaida: () => void;
 }
 
-export const Body = ({ onOpenWallet }: IBodyProps) => {
+export const Body = ({
+    onOpenEntrada,
+    onOpenSaida,
+    onOpenWallet }: IBodyProps) => {
 
     const { COLORS } = useTheme();
     const navigation = useNavigation();
@@ -56,17 +61,17 @@ export const Body = ({ onOpenWallet }: IBodyProps) => {
                     <CashInContainer>
                         <CashInTitle>Entradas</CashInTitle>
                         <CashInAmount>R$ {new Intl.NumberFormat('pt-BR', {
-                        minimumFractionDigits: 2,
-                        maximumFractionDigits: 2
-                    }).format(cashIn)}</CashInAmount>
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                        }).format(cashIn)}</CashInAmount>
                     </CashInContainer>
 
                     <CashOutContainer>
                         <CashOutTitle>Saídas</CashOutTitle>
                         <CashOutAmount>R$ {new Intl.NumberFormat('pt-BR', {
-                        minimumFractionDigits: 2,
-                        maximumFractionDigits: 2
-                    }).format(cashOut)}</CashOutAmount>
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                        }).format(cashOut)}</CashOutAmount>
                     </CashOutContainer>
                 </BudgetContainer>
                 <ButtonContainer>
@@ -74,13 +79,13 @@ export const Body = ({ onOpenWallet }: IBodyProps) => {
                         title="Entrada"
                         iconName="cash-plus"
                         variant="home"
-                        onPress={() => { }}
+                        onPress={onOpenEntrada}
                     />
                     <ButtonIcon
                         title="Saída"
                         iconName="cash-minus"
                         variant="home"
-                        onPress={() => { }}
+                        onPress={onOpenSaida}
                     />
                     <ButtonIcon
                         title="Cofrinhos"

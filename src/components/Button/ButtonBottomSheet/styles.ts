@@ -7,7 +7,7 @@ export const Container = styled(TouchableOpacity)`
     height: 60px;
     align-items: center;
     justify-content: center;
-    margin-top: ${RFValue(35)}px;
+    margin-top: ${RFValue(20)}px;
     margin-left: ${RFValue(35)}px;
     margin-right: ${RFValue(35)}px;
 `;

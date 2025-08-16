@@ -14,6 +14,7 @@ import InputModal from '@src/components/Input/InputModal';
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { useTheme } from 'styled-components/native';
 import { ButtonBottomSheet } from '@src/components/Button/ButtonBottomSheet'
+import { useCurrencyInput } from '@src/hooks/useCurrencyInput';
 
 type WalletBottomSheetProps = {
     visible: boolean;
@@ -33,7 +34,7 @@ export const WalletBottomSheet = ({
 
     const { COLORS } = useTheme();
     const COLORSMAP = ['#4CAF50', '#2196F3', '#FFC107', '#9C27B0', '#F44336', '#E91E63', '#00BCD4', '#8BC34A'];
-
+    const currency = useCurrencyInput(wallet?.amount ? wallet.amount * 100 : 0)
     const [selectedColor, setSelectedColor] = useState(null);
     const [observable, setObservable] = useState(false);
 
@@ -66,7 +67,6 @@ export const WalletBottomSheet = ({
     return (
         <BottomSheet
             ref={bottomSheetRef}
-            snapPoints={['60%']}
             index={-1}
             handleIndicatorStyle={{ backgroundColor: "transparent" }}
             backgroundStyle={{ backgroundColor: COLORS.BLACK_200 }}
@@ -78,9 +78,17 @@ export const WalletBottomSheet = ({
                 <Container >
                     <ModalTitle>{modalTitle}</ModalTitle>
                     <Title>Nome *</Title>
-                    <InputModal placeholder='Nome da carteira'>{wallet?.title}</InputModal>
+                    <InputModal
+                        placeholder='Nome da carteira'
+                        iconName='edit'
+                    >{wallet?.title}</InputModal>
                     <Title>Saldo *</Title>
-                    <InputModal placeholder='0,00'>{wallet?.amount}</InputModal>
+                    <InputModal
+                        placeholder='0'
+                        keyboardType='numeric'
+                        onChangeText={currency.onChangeText}
+                        iconName='creditcard'
+                    >{currency.formatted}</InputModal>
                     <Title>Cor</Title>
                     <ColorContainer>
                         {COLORSMAP.map((color) => (
