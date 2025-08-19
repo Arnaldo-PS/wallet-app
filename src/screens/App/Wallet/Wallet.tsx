@@ -29,6 +29,7 @@ import { FlatList, TouchableOpacity } from 'react-native';
 import { wallet as walletData } from '@src/utils/wallet'
 import { WalletBottomSheet } from '@src/components/BottomSheet/WalletBottomSheet';
 import { useNavigation } from '@react-navigation/native';
+import { ConfirmBottomSheet } from '@src/components/BottomSheet/ConfirmBottomSheet';
 
 export const Wallet = () => {
 
@@ -36,6 +37,7 @@ export const Wallet = () => {
     const [wallet, setWallet] = useState(walletData);
     const [editWalletVisible, setEditWalletVisible] = useState(false)
     const [newWalletVisible, setNewWalletVisible] = useState(false)
+    const [confirmVisible, setConfirmVisible] = useState(false)
     const [selectedWallet, setSelectedWallet] = useState<any>(null);
     const navigation = useNavigation();
 
@@ -114,7 +116,7 @@ export const Wallet = () => {
                                             color={COLORS.GRAY4}
                                         />
                                     </TouchableOpacity>
-                                    <TouchableOpacity onPress={() => { }}>
+                                    <TouchableOpacity onPress={() => setConfirmVisible(true)}>
                                         <MaterialCommunityIcons
                                             name='delete-outline'
                                             size={24}
@@ -141,6 +143,12 @@ export const Wallet = () => {
                 visible={newWalletVisible}
                 onClose={() => setNewWalletVisible(false)}
                 submitName='Adicionar'
+            />
+            <ConfirmBottomSheet
+                modalTitle='Deseja excluir a carteira?'
+                visible={confirmVisible}
+                onClose={() => setConfirmVisible(false)}
+                submitName='Excluir'
             />
         </Container>
     )
