@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import { Home } from "@src/screens/Tab/Home";
 import { Settings } from "@src/screens/Tab/Settings";
 import { Statistic } from "@src/screens/Tab/Statistic";
@@ -9,6 +9,12 @@ import theme from '../styles/theme'
 import { GearIcon, WalletIcon, ChartDonutIcon, ChartLineIcon } from 'phosphor-react-native'
 
 const { Navigator, Screen } = createBottomTabNavigator();
+
+const CustomTabBarButton = React.forwardRef<any, any>(({ children, ...props }, ref) => (
+  <TouchableOpacity ref={ref} activeOpacity={1} {...props}>
+    {children}
+  </TouchableOpacity>
+));
 
 export const TabRoutes = () => {
     return (
@@ -29,8 +35,11 @@ export const TabRoutes = () => {
                     backgroundColor: theme.COLORS.BLACK_100,
                     paddingTop: 17,
                     height: 75,
-                    borderColor: 'transparent'
-                }
+                    borderColor: 'transparent',
+                    shadowColor: 'transparent',
+                    elevation: 0
+                },
+                tabBarButton: (props) => <CustomTabBarButton {...props} />,
             }}
         >
             <Screen

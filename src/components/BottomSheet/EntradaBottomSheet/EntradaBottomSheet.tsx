@@ -97,10 +97,10 @@ export const EntradaBottomSheet = ({
                             iconName='creditcard'
                         >{currency.formatted}</InputModal>
 
-                        <Title>Conta *</Title>
+                        <Title>Carteira *</Title>
                         <DropdownContainer onPress={handleSelectWallet}>
                             <DropdownText isPlaceholder={!selectedAccount}>
-                                {selectedAccount ? selectedAccount.name : 'Selecione a conta'}
+                                {selectedAccount ? selectedAccount.name : 'Selecione a carteira'}
                             </DropdownText>
                         </DropdownContainer>
 
@@ -134,7 +134,7 @@ export const EntradaBottomSheet = ({
                 </BottomSheetView>
                 <Portal>
                     <SelectWalletBottomSheet
-                        modalTitle='Selecione a conta'
+                        modalTitle='Selecione a carteira'
                         visible={selectWalletVisible}
                         onClose={() => setSelectWalletVisible(false)}
                         onSelect={(account) => setSelectedAccount(account)}
